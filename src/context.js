@@ -10,7 +10,7 @@ export function AppProvider({ children }) {
   const [pageAndLinks, setPageAndLinks] = useState({page:"", links:[]})
 
   function openSidebar() {
-    setIsSidebarOpen(false);
+    setIsSidebarOpen(true);
   }
   function closeSidebar() {
     setIsSidebarOpen(false);
