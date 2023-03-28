@@ -4,13 +4,13 @@ import sublinks from "./data";
 const AppContext = React.createContext();
 
 export function AppProvider({ children }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [location, setLocation] = useState({})
   const [pageAndLinks, setPageAndLinks] = useState({page:"", links:[]})
 
   function openSidebar() {
-    setIsSidebarOpen(true);
+    setIsSidebarOpen(false);
   }
   function closeSidebar() {
     setIsSidebarOpen(false);
