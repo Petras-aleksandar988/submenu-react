@@ -1,27 +1,25 @@
-import logo from './images/logo.svg'
-import { FaBars } from 'react-icons/fa'
+import logo from "./images/logo.svg";
+import { FaBars } from "react-icons/fa";
 import { useGlContext } from "./context";
 
-
-const Navbar = () => {
-  const { openSidebar, closeSubmenu, openSubmenu } = useGlContext()
-
-  function showSubenu(e) {
+function Navbar() {
+  const { openSidebar, closeSubmenu, openSubmenu } = useGlContext();
+  function displaySubmenu(e) {
     const page = e.target.textContent
-    const btn = e.target.getBoundingClientRect();
-    const center = (btn.left + btn.right) / 2
-    const bottom = btn.bottom - 5
+    const tempBtn = e.target.getBoundingClientRect()
+    const center = (tempBtn.left + tempBtn.right) / 2
+    const bottom = tempBtn.bottom -4
     
-   
-    openSubmenu(page, {center,bottom})
+
+     openSubmenu(page, {center,bottom})
   }
-  function handleCloseMenu(e) {
-    if (!e.target.classList.contains("link-btn")) {
-      closeSubmenu()
-    }
-  }
+  function handleSubmenuClose(e) {
+   if(!e.target.classList.contains("link-btn"))
+   {
+     closeSubmenu()
+}  }
   return (
-    <nav className="nav" onMouseOver={handleCloseMenu}>
+    <nav className="nav" onMouseOver={handleSubmenuClose}>
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} className="nav-logo" alt="logo" />
@@ -31,17 +29,17 @@ const Navbar = () => {
         </div>
         <ul className="nav-links">
           <li>
-            <button className="link-btn" onMouseOver={showSubenu}>
+            <button className="link-btn" onMouseOver={displaySubmenu}>
               products
             </button>
           </li>
           <li>
-            <button className="link-btn" onMouseOver={showSubenu}>
+            <button className="link-btn" onMouseOver={displaySubmenu}>
               developers
             </button>
           </li>
           <li>
-            <button className="link-btn" onMouseOver={showSubenu}>
+            <button className="link-btn" onMouseOver={displaySubmenu}>
               company
             </button>
           </li>
@@ -52,4 +50,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar
+export default Navbar;

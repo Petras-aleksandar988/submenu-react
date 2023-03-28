@@ -1,7 +1,7 @@
 {
   "name": "submenu-react",
   "version": "0.1.0",
-  "hpmepage": "https://Petras-aleksandar988.github.io/submenu-react",
+  "homepage": "https://Petras-aleksandar988.github.io/submenu-react",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
